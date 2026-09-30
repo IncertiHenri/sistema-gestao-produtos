@@ -32,5 +32,42 @@
     <button type="submit">Cadastrar</button>
     </form>
 
+    <table>
+                <tr>
+                    <th>ID</th>
+                    <th>Nome</th>
+                    <th>Categoria</th>
+                    <th>Descrição</th>
+                    <th>Preço</th>
+                    <th>Quantidade em estoque</th>
+                    <th>Data de validade</th>
+                </tr>
+
+    <?php
+    
+    include("infra/conexao.php");
+
+    $sql = "SELECT * FROM produtos";
+
+    $produtos = $conn->query($sql);
+
+    while ($produto = mysqli_fetch_assoc($produtos)) {
+    ?>
+
+                    <tr>
+                        <td><?php echo $produto["id"] ?></td>
+                        <td><?php echo $produto["nome"] ?></td>
+                        <td><?php echo $produto["categoria"] ?></td> 
+                        <td><?php echo $produto["descricao"] ?></td>
+                        <td><?php echo $produto["preco"] ?></td>
+                        <td><?php echo $produto["quantidade_estoque"] ?></td>    
+                        <td><?php echo $produto["data_validade"] ?></td> 
+                        <td>
+                            <a href="public/formulario_editar_produto.php?id=<?php echo $produto["id"] ?>">Editar produto</a>
+                            <a href="public/excluir_produto.php?id=<?php echo $produto["id"] ?>">Excluir produto</a>
+                        </td>           
+                    </tr>
+    <?php } ?>
+
 </body>
 </html>
