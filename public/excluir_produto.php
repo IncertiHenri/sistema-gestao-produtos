@@ -8,9 +8,9 @@ $sql = "DELETE FROM produtos WHERE id = ?";
 
 $stmt = $conn->prepare($sql);
 
-$stmt -> bind_param("i",$id);
+$stmt->bind_param("i", $id);
 
-$stmt -> execute();
+$stmt->execute();
 
 header("Location:../index.php");
 

@@ -1,11 +1,11 @@
-:root{
+:root {
     --fundo-form: rgb(255, 255, 255);
     --fundo-azul: rgb(0, 132, 255);
     --palavras: rgb(255, 255, 255);
     --linhas: rgb(54, 52, 52);
 }
 
-form{
+form {
     display: inline-flex;
     flex-direction: column;
     gap: 10px;
@@ -13,22 +13,22 @@ form{
     border: solid 1px var(--fundo-azul);
 }
 
-body{
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
 }
 
-button{
+button {
     background-color: var(--fundo-azul);
     border: 0px;
     color: var(--palavras);
 }
 
-th{
+th {
     color: var(--fundo-azul);
     background-color: var(--palavras);
 }
 
-table{
+table {
     border: 1px solid var(--fundo-azul);
 }
